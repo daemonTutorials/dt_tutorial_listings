@@ -12,7 +12,7 @@ int main()
     
     // Execute
     cout << "Hello World!" << endl;
-    cout << "I'm Maik. I written a executable cpp file." << endl;
+    cout << "I'm Maik. I written an executable cpp file." << endl;
     cout << "Wert der Variable i: " << i << endl;
     cout << "Dein Name: ";
     cin >> Name1;
