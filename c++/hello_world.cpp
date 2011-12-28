@@ -1,23 +1,19 @@
 // C++ Hello World
 
-#include <iostream>
+#include "std_lib_facilites.h" // Kapseln des IOStreams
 
-using namespace std;
-
-int main()
+int main(int argc, char* argv[])
 {
     // Variablen
     int i = 1;
-    char Name1[128];
+    string name;
     
     // Execute
     cout << "Hello World!" << endl;
-    cout << "I'm Maik. I written an executable cpp file." << endl;
     cout << "Wert der Variable i: " << i << endl;
     cout << "Dein Name: ";
-    cin >> Name1;
-    cout << "Eingegebener Name: " << Name1 << endl;
+    cin >> name; cout << "Eingegebener Name: " << name << "\a" << endl; // Zum Name abfragen und ausgeben
     
-    return 0;
+    return EXIT_SUCCESS;
 }
 
