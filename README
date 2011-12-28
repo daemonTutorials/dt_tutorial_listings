@@ -20,7 +20,8 @@ Index
  
  - belltone.cpp
  - belltone (executable)
- 
+
+/c++/intelligent_program.d
  - person.class.h
  - intelligent_program.cpp
  - intelligent_program (executable)
