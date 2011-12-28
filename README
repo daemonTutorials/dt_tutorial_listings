@@ -13,3 +13,5 @@ Index
 /c++
  - helloworld.cpp
  - helloworld (executable)
+ - without_namespace.cpp
+ - without_namespace (executable)
