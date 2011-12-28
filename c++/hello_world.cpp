@@ -2,7 +2,7 @@
 
 #include "std_lib_facilites.h" // Kapseln des IOStreams
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     // Variablen
     int i = 1;
