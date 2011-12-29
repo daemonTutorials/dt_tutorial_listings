@@ -1,5 +1,10 @@
 // C++ Hello World
 
+/*
+ * depends=('/c++/std_lib_facilites.h')
+ */
+ 
+ 
 #include "std_lib_facilites.h" // Kapseln des IOStreams
 
 int main(int argc, char *argv[])

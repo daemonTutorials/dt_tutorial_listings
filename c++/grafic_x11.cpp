@@ -3,6 +3,7 @@
  * Author: Maik
  * Date: 2011/29/12
  * g++ Command: g++ grafic_11.cpp -o grafic_x11 -L/usr/X11R6/lib -lX11 -I/usr/X11R6/include
+ * depends=('/c++/std_lib_facilites.h')
  */
  
 #include "std_lib_facilites.h"

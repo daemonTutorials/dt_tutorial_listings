@@ -1,6 +1,9 @@
 /*
  * Title: QT4 GUI Example
  * Author: Maik
+ * Date: 2011/29/12
+ * G++ Command Line: qmake; make
+ * depends=('/c++/std_lib_facilites.h')
  */ 
  
 #include "../std_lib_facilites.h"
@@ -18,7 +21,7 @@ int main(int argc, char *argv[])
     layout->addWidget(lineEdit);
     
     window.setLayout(layout);
-    window.setWindowTitle(QApplication::translate("toplevel", "Top-Level Widget"));
+    window.setWindowTitle(QApplication::translate("toplevel", "MyWidget"));
     window.show();
     
     return app.exec();
