@@ -49,7 +49,9 @@ int main()
     if (datacheck == 'y')
     {
         fillIn(firstName, lastName, age, birthday);
+        cout << "Daten befuellt" << endl;
         string all = person->getAll();
+        cout << "Daten geholt" << endl;
         cout << endl << line << endl;
         cout << all << endl;
         cout << endl << line << endl;
