@@ -10,14 +10,12 @@
 #include "std_lib_facilites.h"
 #include "person.class.h"
 
-// Preprocessor Declaration
-
-Person *person; // Globale Person
 
 void fillIn(string firstName, string lastName, string age, string birthday);
 
 int main()
 {
+    Person person;
     //Variablen
     string line = "=============================="; // Trennlinie
     char datacheck; // Use ' ' instead of " "
@@ -48,9 +46,13 @@ int main()
     
     if (datacheck == 'y')
     {
-        fillIn(firstName, lastName, age, birthday);
+        person.setAttribute(1, firstName);
+        person.setAttribute(2, lastName);
+        person.setAttribute(3, age);
+        person.setAttribute(4, birthday);
+        
         cout << "Daten befuellt" << endl;
-        string all = person->getAll();
+        string all = person.getAll();
         cout << "Daten geholt" << endl;
         cout << endl << line << endl;
         cout << all << endl;
@@ -67,12 +69,4 @@ int main()
     
     
     return EXIT_SUCCESS;
-}
-
-void fillIn(string firstName, string lastName, string age, string birthday)
-{
-    person->setAttribute(1, firstName);
-    person->setAttribute(2, lastName);
-    person->setAttribute(3, age);
-    person->setAttribute(4, birthday);
 }
