@@ -10,12 +10,13 @@
 
 class Person {
     private: 
+    
+    public:
+        
         string firstName; 
         string lastName; 
         string age; 
         string birthday;
-    
-    public:
         Person();
         string getAttribute(int nameindex);
         int setAttribute(int nameindex, string content);
