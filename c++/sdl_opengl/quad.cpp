@@ -25,6 +25,7 @@
 #include "opengl_bindings.h"
 
 bool pollEvents();
+void drawOnBuffer();
 
 int main(int argc, char **argv)
 {
@@ -46,7 +47,7 @@ int main(int argc, char **argv)
     {
     
         if (!pollEvents()) break;
-        
+        drawOnBuffer();
         
     }
 
@@ -78,6 +79,13 @@ bool pollEvents()
                 break;
         }
     }   
+    
+        
+    return true;
+}
+
+void drawOnBuffer()
+{
     // Anweisungen
         
     glClearColor(0.0, 0.0, 0.0, 0.0); // Loeschfarbe setzen
@@ -133,7 +141,4 @@ bool pollEvents()
     
     SDL_GL_SwapBuffers(); // Bildpuffer umtauschen
 
-        
-    return true;
 }
-

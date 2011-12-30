@@ -8,7 +8,8 @@
  */
 
 #include "std_lib_facilites.h"
-//#include "person.class.h"
+#include "person.class.h"
+
 // TODO: Implement Person Class
 
 int main()

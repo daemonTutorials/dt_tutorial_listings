@@ -47,6 +47,33 @@ int main(int argc, char **argv)
     
         if (!pollEvents()) break;
         
+        // Anweisungen
+        
+        glClearColor(1.0, 0.0, 0.0, 0.0); // Loeschfarbe setzen
+        glClear(GL_COLOR_BUFFER_BIT); // Buffer loeschen
+    
+        glMatrixMode(GL_PROJECTION); // Matrix setzen
+        glLoadIdentity(); // Matrixitentitaet laden
+    
+        glOrtho(0, 800, 600, 0, -1, 1);
+    
+        // Dreieck zeichnen
+        glBegin(GL_TRIANGLES); 
+    
+        glColor3f(1,0,0); // Farbe rot
+        glVertex3f(400,100,0); // Coord. 400:100:0
+    
+        glColor3f(0,1,0); // Farbe gruen
+        glVertex3f(750, 500, 0); // Coord. 750:500:0
+    
+        glColor3f(0,0,1); // Farbe blau
+        glVertex3f(50, 500, 0); // Coord. 50:500:0
+    
+        glEnd();
+    
+    
+        SDL_GL_SwapBuffers(); // Bildpuffer umtauschen
+        
         
     }
 
@@ -78,33 +105,7 @@ bool pollEvents()
                 break;
         }
     }   
-    // Anweisungen
-        
-    glClearColor(1.0, 0.0, 0.0, 0.0); // Loeschfarbe setzen
-    glClear(GL_COLOR_BUFFER_BIT); // Buffer loeschen
     
-    glMatrixMode(GL_PROJECTION); // Matrix setzen
-    glLoadIdentity(); // Matrixitentitaet laden
-    
-    glOrtho(0, 800, 600, 0, -1, 1);
-    
-    // Dreieck zeichnen
-    glBegin(GL_TRIANGLES); 
-    
-    glColor3f(1,0,0); // Farbe rot
-    glVertex3f(400,100,0); // Coord. 400:100:0
-    
-    glColor3f(0,1,0); // Farbe gruen
-    glVertex3f(750, 500, 0); // Coord. 750:500:0
-    
-    glColor3f(0,0,1); // Farbe blau
-    glVertex3f(50, 500, 0); // Coord. 50:500:0
-    
-    glEnd();
-    
-    
-    SDL_GL_SwapBuffers(); // Bildpuffer umtauschen
-        
     return true;
 }
 
