@@ -40,3 +40,5 @@ Index
  - std_lib_facilities.h  
  - triangle (executable)  
  - triangle.cpp
+ - 3d.cpp
+ - 3d (executable)

@@ -6,7 +6,6 @@
  * 
  */
 
-#include <string.h>
 
 
 class Person {
