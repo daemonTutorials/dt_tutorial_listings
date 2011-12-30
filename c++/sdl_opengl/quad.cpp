@@ -119,7 +119,7 @@ void drawOnBuffer()
     sleep(3);
     
     
-    SDL_Flip(SDL_GetVideoSurface());
+    SDL_Flip(screen);
         
     glBegin(GL_QUADS); 
     
