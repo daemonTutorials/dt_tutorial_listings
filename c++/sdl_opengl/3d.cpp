@@ -137,6 +137,7 @@ void drawOnBuffer()
       glVertex3f(-1,  1, -1);
       glVertex3f(-1,  1,  1);
 
+
     glEnd(); // Wir sind fertig mit dem Zeichnen
     
     
