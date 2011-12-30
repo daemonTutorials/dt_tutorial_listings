@@ -1,5 +1,6 @@
 // C++ - Use Methods without Namespace import
 
+ 
 #include <iostream>
 
 int main()

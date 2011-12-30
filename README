@@ -20,3 +20,25 @@ Index
  
  - belltone.cpp
  - belltone (executable)
+
+ - grafic_x11.cpp
+ - grafic_x11 (executable)
+
+/c++/intelligent_program.d
+ - person.class.h
+ - intelligent_program.cpp
+ - intelligent_program (executable)
+ 
+/c++/qt_gui
+ - qt_gui (executable)
+ - qt_gui.cpp
+ 
+/c++/sdl_opengl
+ - opengl_bindings.h
+ - quad (executable) 
+ - quad.cpp
+ - std_lib_facilities.h  
+ - triangle (executable)  
+ - triangle.cpp
+ - 3d.cpp
+ - 3d (executable)

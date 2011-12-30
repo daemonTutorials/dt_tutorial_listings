@@ -1,5 +1,8 @@
 // C++ - Belltone 
-
+/*
+ * depends=('/c++/std_lib_facilites.h')
+ */
+ 
 #include <iostream>
 
 int main()
