@@ -9,30 +9,19 @@
 
 
 class Person {
-    private: 
-    
+    private:
+        char firstName[100]; 
+        char lastName[100]; 
+        char age[5]; 
+        char birthday[15];
     public:
         
-        string firstName; 
-        string lastName; 
-        string age; 
-        string birthday;
-        Person();
-        string getAttribute(int nameindex);
+        char getAttribute(int nameindex);
         int setAttribute(int nameindex, string content);
-        string getAll();
+        char getAll();
 };
 
-// Konstruktor
-Person::Person()
-{
-    this->firstName = "Frank";
-    this->lastName = "Mueller";
-    this->age = "14";
-    this->birthday = "19970109";
-}
-
-string Person::getAttribute(int nameindex)
+char Person::getAttribute(int nameindex)
 {
     switch (nameindex)
     {
@@ -53,7 +42,8 @@ string Person::getAttribute(int nameindex)
         break;
         
     default:
-        return "I have no params";
+        char msg[100] = 'No Params';
+        return msg;
         break;
     }
     
@@ -65,22 +55,22 @@ int Person::setAttribute(int nameindex, string content)
     switch (nameindex)
     {
     case 1:
-        this->firstName = content;
+        strcpy(this->firstName, content);
         return 0;
         break;
         
     case 2:
-        this->lastName = content;
+        strcpy(this->lastName, content);
         return 0;
         break;
         
     case 3:
-        this->age = content;
+        strcpy(this->age, content);
         return 0;
         break;
         
     case 4:
-        this->birthday = content;
+        strcpy(this->birthday, content);
         return 0;
         break;
         
@@ -92,8 +82,8 @@ int Person::setAttribute(int nameindex, string content)
     return 0;
 }
 
-string Person::getAll()
+char Person::getAll()
 {
-    string all = this->firstName + ", " + this->lastName + " | " + this->age + " | " + this->birthday;
+    char all[200] = this->firstName + ", " + this->lastName + " | " + this->age + " | " + this->birthday;
     return all;
 }
