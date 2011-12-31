@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 {
     if( SDL_Init( SDL_INIT_VIDEO ) != 0 ) // Initialisieren des SDL Video Subsystems
     {
-        cout << "Die SDL konnte nicht initalisiert werden (" << SDL_GetError() << ")" << endl;
+        cerr << "Die SDL konnte nicht initalisiert werden (" << SDL_GetError() << ")" << endl;
         return 1;
     }
 
@@ -136,6 +136,7 @@ void drawOnBuffer()
       glVertex3f( 1,  1, -1);
       glVertex3f(-1,  1, -1);
       glVertex3f(-1,  1,  1);
+
 
     glEnd(); // Wir sind fertig mit dem Zeichnen
     

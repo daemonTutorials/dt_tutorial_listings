@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 {
     if( SDL_Init( SDL_INIT_VIDEO ) != 0 ) // Initialisieren des SDL Video Subsystems
     {
-        cout << "Die SDL konnte nicht initalisiert werden (" << SDL_GetError() << ")" << endl;
+        cerr << "Die SDL konnte nicht initalisiert werden (" << SDL_GetError() << ")" << endl;
         return 1;
     }
 
@@ -119,7 +119,7 @@ void drawOnBuffer()
     sleep(3);
     
     
-    SDL_Flip(SDL_GetVideoSurface());
+    SDL_Flip(screen);
         
     glBegin(GL_QUADS); 
     

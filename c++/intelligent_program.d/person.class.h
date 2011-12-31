@@ -6,54 +6,28 @@
  * 
  */
 
+#ifndef PERSON_CLASS_H_
+#define PERSON_CLASS_H_
 
+#include <string>
 
+using std::string;
+
+namespace PersonNS {
 class Person {
-    private: 
+    private:
+        
         string firstName; 
         string lastName; 
         string age; 
         string birthday;
-    
     public:
+        
         Person();
-        string getAttribute(string name);
-        int setAttribute(string name, string content);
+        string content2;
+        string getAttribute(int index);
+        bool setAttribute(int index, string content);
+        string getAll();
 };
-
-// Konstruktor
-Person::Person()
-{
-    firstName = "Frank";
-    lastName = "Mueller";
-    age = "14";
-    birthday = "19970109";
 }
-
-string Person::getAttribute(string name)
-{
-    switch (name)
-    {
-    case "firstName":
-        return this->firstName;
-        break;
-        
-    case "lastName":
-        return this->lastName;
-        break;
-        
-    case "age":
-        return this->age;
-        break;
-        
-    case "birthday":
-        return this->birthday;
-        break;
-        
-    default:
-        return "I have no params";
-        break;
-    }
-    
-    return 0;
-}
+#endif

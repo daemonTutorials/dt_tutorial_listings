@@ -26,6 +26,7 @@ Index
 
 /c++/intelligent_program.d
  - person.class.h
+ - person.class.cpp
  - intelligent_program.cpp
  - intelligent_program (executable)
  
