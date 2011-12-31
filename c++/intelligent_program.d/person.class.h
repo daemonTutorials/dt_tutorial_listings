@@ -6,22 +6,32 @@
  * 
  */
 
-
+#include <string.h>
 
 class Person {
     private:
-        char firstName[100]; 
-        char lastName[100]; 
-        char age[5]; 
-        char birthday[15];
     public:
         
-        char getAttribute(int nameindex);
-        int setAttribute(int nameindex, string content);
-        char getAll();
+        string firstName; 
+        string lastName; 
+        string age; 
+        string birthday;
+        Person();
+        string content2;
+        string getAttribute(int nameindex);
+        bool setAttribute(int nameindex, string content);
+        string getAll();
 };
 
-char Person::getAttribute(int nameindex)
+Person::Person()
+{
+    this->firstName = "";
+    this->lastName = "";
+    this->age = "";
+    this->birthday = "";
+}
+
+string Person::getAttribute(int nameindex)
 {
     switch (nameindex)
     {
@@ -42,7 +52,7 @@ char Person::getAttribute(int nameindex)
         break;
         
     default:
-        char msg[100] = 'No Params';
+        string msg = "No Params";
         return msg;
         break;
     }
@@ -50,40 +60,40 @@ char Person::getAttribute(int nameindex)
     return 0;
 }
 
-int Person::setAttribute(int nameindex, string content)
+bool Person::setAttribute(int i, string content)
 {
-    switch (nameindex)
+    if (i == 1)
     {
-    case 1:
-        strcpy(this->firstName, content);
-        return 0;
-        break;
-        
-    case 2:
-        strcpy(this->lastName, content);
-        return 0;
-        break;
-        
-    case 3:
-        strcpy(this->age, content);
-        return 0;
-        break;
-        
-    case 4:
-        strcpy(this->birthday, content);
-        return 0;
-        break;
-        
-    default:
-        return 1;
-        break;
+        this->content2 = content;
+        cout << this->content2 << endl;
+        this->firstName += content;
+        cout << this->firstName << endl;
+        return true;
+    }
+    else if (i == 2)
+    {
+        this->lastName += content;
+        return true;
+    }
+    else if (i == 3)
+    {
+        this->age += content;
+        return true;
+    }
+    else if (i == 4)
+    {
+        this->birthday += content;
+        return true;
+    }
+    else {
+        return false;
     }
     
-    return 0;
+    return true;
 }
 
-char Person::getAll()
+string Person::getAll()
 {
-    char all[200] = this->firstName + ", " + this->lastName + " | " + this->age + " | " + this->birthday;
+    string all = this->firstName + ", " + this->lastName + " | " + this->age + " | " + this->birthday;
     return all;
 }
