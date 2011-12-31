@@ -18,10 +18,12 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=1291;C;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/person.class.h;0;4
-FILE_NAME_1=1479;C++;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/intelligent_program.cpp;0;4
-FILE_NAME_2=138;C;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/std_lib_facilites.h;0;4
+current_page=1
+FILE_NAME_0=530;C;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/person.class.h;0;4
+FILE_NAME_1=205;C++;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/intelligent_program.cpp;0;4
+FILE_NAME_2=119;C;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/std_lib_facilites.h;0;4
+FILE_NAME_3=1244;C++;0;16;0;1;0;/media/Daten/github/dt_tutorials_listings/c++/intelligent_program.d/person.class.cpp;0;4
+FILE_NAME_4=0;C;0;16;0;1;0;/home/maik/Downloads/application_window.h;0;6
 
 [VTE]
 last_dir=/media/Daten/github/dt_tutorials_listings
@@ -31,3 +33,9 @@ source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;
 header_patterns=*.h;*.H;*.hpp;*.hxx;*.h++;*.hh;*.m;
 ignored_dirs_patterns=.*;CVS;
 generate_tags=false
+
+[build-menu]
+C++FT_01_LB=_Erstellen
+C++FT_01_CM=g++ -Wall -g -o "%e" "%f" person.class.cpp 
+C++FT_01_WD=
+filetypes=C++;

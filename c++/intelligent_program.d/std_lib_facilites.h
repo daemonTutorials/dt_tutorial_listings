@@ -3,5 +3,4 @@
 #include <iostream>
 #include <cstdlib> // Zum Anwenden des Termination Befehls "EXIT_SUCCESS"
 
-using namespace std;
 

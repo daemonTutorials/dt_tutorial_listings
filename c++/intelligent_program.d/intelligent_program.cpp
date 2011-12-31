@@ -7,15 +7,18 @@
  * Depends = ('std_lib_facilites.h', 'person.class.h')
  */
 
-#include "std_lib_facilites.h"
+//#include "std_lib_facilites.h"
+#include <iostream>
+#include <cstdlib>
 #include "person.class.h"
+#include <string>
 
+using namespace std;
 
-void fillIn(Person person, string firstName, string lastName, string age, string birthday);
+PersonNS::Person fillIn(string firstName, string lastName, string age, string birthday);
 
 int main()
 {
-    Person person;
     //Variablen
     string line = "=============================="; // Trennlinie
     char datacheck; // Use ' ' instead of " "
@@ -46,11 +49,11 @@ int main()
     
     if (datacheck == 'y')
     {
-        fillIn(person, firstName, lastName, age, birthday);
-        cout << person.firstName << endl;
-        cout << "Daten befuellt" << endl;
+        PersonNS::Person person = fillIn(firstName, lastName, age, birthday);
+        //cout << person.firstName << endl;
+        //cout << "Daten befuellt" << endl;
         string all = person.getAll();
-        cout << "Daten geholt" << endl;
+        //cout << "Daten geholt" << endl;
         cout << endl << line << endl;
         cout << all << endl;
         cout << endl << line << endl;
@@ -68,12 +71,14 @@ int main()
     return EXIT_SUCCESS;
 }
 
-void fillIn(Person person, string firstName, string lastName, string age, string birthday)
+PersonNS::Person fillIn(string firstName, string lastName, string age, string birthday)
 {
-    bool firstHandler = person.setAttribute(1, firstName);
-    cout << firstName << " | " << firstHandler << endl;
-    bool secondHandler = person.setAttribute(2, lastName);
-    cout << lastName << " | " << secondHandler << endl;
+    PersonNS::Person person;
+    person.setAttribute(1, firstName);
+    // cout << firstName << " | " << firstHandler << endl;
+    person.setAttribute(2, lastName);
+    // cout << lastName << " | " << secondHandler << endl;
     person.setAttribute(3, age);
     person.setAttribute(4, birthday);
+    return person;
 }
