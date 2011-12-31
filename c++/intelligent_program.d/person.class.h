@@ -11,7 +11,7 @@
 
 #include <string>
 
-using namespace std;
+using std::string;
 
 namespace PersonNS {
 class Person {
