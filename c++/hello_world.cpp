@@ -19,6 +19,9 @@ int main(int argc, char *argv[])
     cin >> name; cout << "Eingegebener Name: " << name << "\a" << endl; // Zum Name abfragen und ausgeben
     cout << "Umlaute: ü ä ö" << endl;
     
+    for(int i=0;i<256;i++)
+    cout << i << ":" << (char)i << endl;
+    
     return EXIT_SUCCESS;
 }
 

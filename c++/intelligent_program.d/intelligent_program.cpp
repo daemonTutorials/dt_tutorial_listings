@@ -4,27 +4,30 @@
  * Author: Maik
  * Date: 2011/28/12
  * 
- * Depends = ('std_lib_facilites.h', 'person.class.h')
+ * Depends = ('person.class.h','ki.ns.h')
  */
 
 //#include "std_lib_facilites.h"
 #include <iostream>
 #include <cstdlib>
-#include "person.class.h"
 #include <string>
+
+#include "person.class.h"
+#include "ki.ns.h"
 
 using namespace std;
 
-void fillIn(PersonNS::Person &person, string &firstName, string &lastName, string &age, string &birthday);
+void fillIn(PersonNS::Person &person, string &firstName, string &lastName, string &age);
+void kiInit(PersonNS::Person &person);
 
 int main()
 {
+    PersonNS::Person person;
     //Variablen
-    string line = "=============================="; // Trennlinie
+    const string line = "=============================="; // Trennlinie
     char datacheck; // Use ' ' instead of " "
     
     string age;
-    string birthday;
     string firstName;
     string lastName;
     
@@ -34,7 +37,6 @@ int main()
     cout << "Your First Name: "; cin >> firstName; // Um den Vornamen zu bekommen
     cout << "Your Last Name: "; cin >> lastName; // Um den Nachnamen zu bekommen
     cout << "Your age: "; cin >> age; // Um das Alter zu bekommen | Berechne ich spaeter anhand des Geburtsjahrs
-    cout << "Your Birthday[DD.MM.YYYY]: "; cin >> birthday;// Um das Geburtsjahr zu bekommen
     cout << endl;
     
     cout << "Data Check" << endl << line << endl;
@@ -42,22 +44,26 @@ int main()
     cout << "First Name: " << firstName << endl;
     cout << "Last Name: " << lastName << endl;
     cout << "Age: " << age << endl;
-    cout << "Birthday: " << birthday << endl;
     
     cout << endl << line << endl;
     cout << "All right\?[y/n]"; cin >> datacheck; // Nutzerueberpruefung
     
-    if (datacheck == 'y')
+    if (datacheck == 'y' && age.length() <= 2)
     {
-        PersonNS::Person person;
-        fillIn(person, firstName, lastName, age, birthday);
-        //cout << person.firstName << endl;
-        //cout << "Daten befuellt" << endl;
+        
+        fillIn(person, firstName, lastName, age);
+        /* cout << person.firstName << endl;
+        cout << "Daten befuellt" << endl;
         string all = person.getAll();
-        //cout << "Daten geholt" << endl;
+        cout << "Daten geholt" << endl;
         cout << endl << line << endl;
         cout << all << endl;
+        cout << endl << line << endl; */
+        
+        
+        // KI
         cout << endl << line << endl;
+        kiInit(person);
         
         return EXIT_SUCCESS;
     }
@@ -66,18 +72,23 @@ int main()
         return EXIT_FAILURE;
     }
     
-    // KI
-    
     
     return EXIT_SUCCESS;
 }
 
-void fillIn(PersonNS::Person &person, string &firstName, string &lastName, string &age, string &birthday)
+void fillIn(PersonNS::Person &person, string &firstName, string &lastName, string &age)
 {
     person.setAttribute(1, firstName);
     // cout << firstName << " | " << firstHandler << endl;
     person.setAttribute(2, lastName);
     // cout << lastName << " | " << secondHandler << endl;
     person.setAttribute(3, age);
-    person.setAttribute(4, birthday);
+}
+
+void kiInit(PersonNS::Person &person)
+{
+    // Get Name
+    string name = person.getAttribute(1) + " " + person.getAttribute(2);
+    string text = KI::Welcome(name);
+    cout << text << " | " << true << endl;
 }

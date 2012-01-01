@@ -8,7 +8,6 @@ Person::Person()
     this->firstName = "";
     this->lastName = "";
     this->age = "";
-    this->birthday = "";
 }
 
 string Person::getAttribute(int index)
@@ -25,10 +24,6 @@ string Person::getAttribute(int index)
         
     case 3:
         return this->age;
-        break;
-        
-    case 4:
-        return this->birthday;
         break;
         
     default:
@@ -58,13 +53,10 @@ bool Person::setAttribute(int index, string content)
         this->age += content;
         return true;
         break;
-    
-    case 4:
-        this->birthday += content;
-        return true;
-        break;
+        
     default:
         return false;
+        break;
     
     }
     return true;
@@ -72,7 +64,7 @@ bool Person::setAttribute(int index, string content)
 
 string Person::getAll()
 {
-    string all = this->firstName + ", " + this->lastName + " | " + this->age + " | " + this->birthday;
+    string all = this->firstName + ", " + this->lastName + " | " + this->age;
     return all;
 }
 

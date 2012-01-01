@@ -20,7 +20,6 @@ class Person {
         string firstName; 
         string lastName; 
         string age; 
-        string birthday;
     public:
         
         Person();
