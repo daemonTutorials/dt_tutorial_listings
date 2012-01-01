@@ -15,7 +15,7 @@
 
 using namespace std;
 
-PersonNS::Person fillIn(string firstName, string lastName, string age, string birthday);
+void fillIn(PersonNS::Person &person, string &firstName, string &lastName, string &age, string &birthday);
 
 int main()
 {
@@ -49,7 +49,8 @@ int main()
     
     if (datacheck == 'y')
     {
-        PersonNS::Person person = fillIn(firstName, lastName, age, birthday);
+        PersonNS::Person person;
+        fillIn(person, firstName, lastName, age, birthday);
         //cout << person.firstName << endl;
         //cout << "Daten befuellt" << endl;
         string all = person.getAll();
@@ -71,14 +72,12 @@ int main()
     return EXIT_SUCCESS;
 }
 
-PersonNS::Person fillIn(string firstName, string lastName, string age, string birthday)
+void fillIn(PersonNS::Person &person, string &firstName, string &lastName, string &age, string &birthday)
 {
-    PersonNS::Person person;
     person.setAttribute(1, firstName);
     // cout << firstName << " | " << firstHandler << endl;
     person.setAttribute(2, lastName);
     // cout << lastName << " | " << secondHandler << endl;
     person.setAttribute(3, age);
     person.setAttribute(4, birthday);
-    return person;
 }
