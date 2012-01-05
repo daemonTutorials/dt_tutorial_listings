@@ -7,8 +7,8 @@ namespace KI {
         return meMark + " " + welcomeMSG + " " + name; 
     }
     
-    string GetSimpleAnswer()
+    string GetSimpleAnswer(string question)
     {
-        return meMark + " I got an Question!";
+        return meMark + "Your Question: " + question;
     }
 }

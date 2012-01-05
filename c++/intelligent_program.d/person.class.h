@@ -17,9 +17,9 @@ namespace PersonNS {
 class Person {
     private:
         
-        string firstName; 
-        string lastName; 
+        string firstName;
         string age; 
+        string question;
     public:
         
         Person();

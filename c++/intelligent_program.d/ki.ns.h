@@ -13,7 +13,7 @@ namespace KI {
 
     // Methoden
     string Welcome(string name);
-    string GetSimpleAnswer();
+    string GetSimpleAnswer(string question);
     
 }
 
