@@ -17,7 +17,7 @@
 
 void fillIn(PersonNS::Person& person, std::string& firstName, std::string& age);
 void kiInit(PersonNS::Person& person);
-int kiQuestion(PersonNS::Person& person);
+void kiQuestion(PersonNS::Person& person);
 void kiLoop(PersonNS::Person& person, std::string& frage);
 
 int main()
@@ -81,17 +81,16 @@ void kiInit(PersonNS::Person& person)
     std::cout << text << std::endl;
 }
 
-void kiLoop(PersonNS::Person& person, char frage[256])
+void kiLoop(PersonNS::Person& person, std::string& frage)
 {
     person.setAttribute(3, frage);
     std::cout << KI::GetSimpleAnswer(person.getAttribute(3));
 }
 
-int kiQuestion(PersonNS::Person& person)
+void kiQuestion(PersonNS::Person& person)
 {
-    char frage[256];
+    std::string frage;
     std::cout << "<<" << std::endl; 
-    std::cin.getline(frage, 256); 
-    //kiLoop(person, frage);
-    return 0;
+    getline(std::cin, frage, '\n'); 
+    kiLoop(person, frage);
 }
