@@ -15,6 +15,7 @@ namespace KI {
     string Welcome(string name);
     string GetSimpleAnswer(string question);
     
+    
 }
 
 

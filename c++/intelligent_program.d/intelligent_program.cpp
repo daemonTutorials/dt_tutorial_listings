@@ -17,7 +17,7 @@
 
 void fillIn(PersonNS::Person& person, std::string& firstName, std::string& age);
 void kiInit(PersonNS::Person& person);
-void kiQuestion(PersonNS::Person& person);
+void kiQuestion(PersonNS::Person& person, std::string& frage);
 void kiLoop(PersonNS::Person& person, std::string& frage);
 
 int main()
@@ -29,7 +29,7 @@ int main()
     
     std::string age;
     std::string firstName;
-
+    std::string frage;
     
     // IO
     std::cout << "Getting Data" << std::endl << line << std::endl;
@@ -54,7 +54,17 @@ int main()
         // KI
         std::cout << std::endl << line << std::endl;
         kiInit(person);
-        kiQuestion(person);
+        
+        while (true)
+        {
+            try {
+                
+                kiQuestion(person, frage);
+            }
+            catch (int e) {
+                break;
+            }
+        }
         
         return 0;
     }
@@ -84,13 +94,21 @@ void kiInit(PersonNS::Person& person)
 void kiLoop(PersonNS::Person& person, std::string& frage)
 {
     person.setAttribute(3, frage);
-    std::cout << KI::GetSimpleAnswer(person.getAttribute(3));
+    std::cout << KI::GetSimpleAnswer(person.getAttribute(3)) << std::endl;
 }
 
-void kiQuestion(PersonNS::Person& person)
+void kiQuestion(PersonNS::Person& person, std::string& frage)
 {
-    std::string frage;
-    std::cout << "<<" << std::endl; 
+    std::cout << "<< "; 
+    std::cin.ignore();
     getline(std::cin, frage, '\n'); 
-    kiLoop(person, frage);
+    if (frage != "")
+    {
+        kiLoop(person, frage);
+        frage = "";
+    } else 
+    {
+        // Do nothing
+        throw 1;
+    }
 }

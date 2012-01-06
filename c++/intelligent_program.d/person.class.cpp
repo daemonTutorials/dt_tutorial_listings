@@ -50,7 +50,7 @@ bool Person::setAttribute(int index, string content)
         break;
         
     case 3:
-        this->question += content;
+        this->question = content;
         return true;
         break;
         

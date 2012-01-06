@@ -9,6 +9,13 @@ namespace KI {
     
     string GetSimpleAnswer(string question)
     {
-        return meMark + "Your Question: " + question;
+        if (question == "help" || question == "Help")
+        {
+            string help = "=======================\n=         Hilfe       =\n=======================\n=                     =\n= <<  Your Question...=\n=    ^                =\n=    |                =\n= A space!!           =\n=======================\n";
+            return help;
+        } else {
+            return meMark + "Your Question: " + question;
+        }
+    
     }
 }
