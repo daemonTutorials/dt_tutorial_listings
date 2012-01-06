@@ -2,7 +2,6 @@
 #define KI_NS_H_
 
 #include <string>
-#include <iostream>
 
 using std::string;
 
