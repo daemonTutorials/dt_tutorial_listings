@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -r /home/maik/Eclipse/Spielwiese/* /home/maik/GIT/dt_tutorials_listings/c++/
+cp -r /home/maik/Eclipse/Spielwiese/* /home/maik/GIT/dt_tutorial_listings/c++/
