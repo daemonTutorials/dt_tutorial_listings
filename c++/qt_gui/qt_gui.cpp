@@ -6,7 +6,7 @@
  * depends=('/c++/std_lib_facilites.h')
  */ 
  
-#include "../std_lib_facilites.h"
+#include "std_lib_facilities.h"
 #include <QtGui>
 
 int main(int argc, char *argv[])
