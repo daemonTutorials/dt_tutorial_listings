@@ -4,81 +4,111 @@
  * Author: Maik
  * Date: 2011/28/12
  * 
- * Depends = ('std_lib_facilites.h', 'person.class.h')
+ * Depends = ('person.class.h','ki.ns.h')
  */
 
 //#include "std_lib_facilites.h"
 #include <iostream>
-#include <cstdlib>
+
 #include "person.class.h"
-#include <string>
+#include "ki.ns.h"
 
-using namespace std;
+//using namespace std;
 
-PersonNS::Person fillIn(string firstName, string lastName, string age, string birthday);
+void fillIn(PersonNS::Person& person, std::string& firstName, std::string& age);
+void kiInit(PersonNS::Person& person);
+void kiQuestion(PersonNS::Person& person, std::string& frage);
+void kiLoop(PersonNS::Person& person, std::string& frage);
 
 int main()
 {
+    PersonNS::Person person;
     //Variablen
-    string line = "=============================="; // Trennlinie
+    const std::string line = "=============================="; // Trennlinie
     char datacheck; // Use ' ' instead of " "
     
-    string age;
-    string birthday;
-    string firstName;
-    string lastName;
+    std::string age;
+    std::string firstName;
+    std::string frage;
     
     // IO
-    cout << "Getting Data" << endl << line << endl;
+    std::cout << "Getting Data" << std::endl << line << std::endl;
     
-    cout << "Your First Name: "; cin >> firstName; // Um den Vornamen zu bekommen
-    cout << "Your Last Name: "; cin >> lastName; // Um den Nachnamen zu bekommen
-    cout << "Your age: "; cin >> age; // Um das Alter zu bekommen | Berechne ich spaeter anhand des Geburtsjahrs
-    cout << "Your Birthday[DD.MM.YYYY]: "; cin >> birthday;// Um das Geburtsjahr zu bekommen
-    cout << endl;
+    std::cout << "Your First Name: "; std::cin >> firstName; // Um den Vornamen zu bekommen
+    std::cout << "Your age: "; std::cin >> age; // Um das Alter zu bekommen | Berechne ich spaeter anhand des Geburtsjahrs
+    std::cout << std::endl;
     
-    cout << "Data Check" << endl << line << endl;
+    std::cout << "Data Check" << std::endl << line << std::endl;
     
-    cout << "First Name: " << firstName << endl;
-    cout << "Last Name: " << lastName << endl;
-    cout << "Age: " << age << endl;
-    cout << "Birthday: " << birthday << endl;
+    std::cout << "First Name: " << firstName << std::endl;
+    std::cout << "Age: " << age << std::endl;
     
-    cout << endl << line << endl;
-    cout << "All right\?[y/n]"; cin >> datacheck; // Nutzerueberpruefung
+    std::cout << std::endl << line << std::endl;
+    std::cout << "All right\?[y/n]"; std::cin >> datacheck; // Nutzerueberpruefung
     
-    if (datacheck == 'y')
+    if (datacheck == 'y' && age.length() <= 2)
     {
-        PersonNS::Person person = fillIn(firstName, lastName, age, birthday);
-        //cout << person.firstName << endl;
-        //cout << "Daten befuellt" << endl;
-        string all = person.getAll();
-        //cout << "Daten geholt" << endl;
-        cout << endl << line << endl;
-        cout << all << endl;
-        cout << endl << line << endl;
         
-        return EXIT_SUCCESS;
+        fillIn(person, firstName, age);
+        
+        // KI
+        std::cout << std::endl << line << std::endl;
+        kiInit(person);
+        
+        while (true)
+        {
+            try {
+                
+                kiQuestion(person, frage);
+            }
+            catch (int e) {
+                break;
+            }
+        }
+        
+        return 0;
     }
     else
     {
-        return EXIT_FAILURE;
+        return 1;
     }
     
-    // KI
     
-    
-    return EXIT_SUCCESS;
+    return 0;
 }
 
-PersonNS::Person fillIn(string firstName, string lastName, string age, string birthday)
+void fillIn(PersonNS::Person& person, std::string& firstName, std::string& age)
 {
-    PersonNS::Person person;
     person.setAttribute(1, firstName);
-    // cout << firstName << " | " << firstHandler << endl;
-    person.setAttribute(2, lastName);
-    // cout << lastName << " | " << secondHandler << endl;
-    person.setAttribute(3, age);
-    person.setAttribute(4, birthday);
-    return person;
+    person.setAttribute(2, age);
+}
+
+void kiInit(PersonNS::Person& person)
+{
+    // Get Name
+    std::string name = person.getAttribute(1);
+    std::string text = KI::Welcome(name);
+    std::cout << text << std::endl;
+}
+
+void kiLoop(PersonNS::Person& person, std::string& frage)
+{
+    person.setAttribute(3, frage);
+    std::cout << KI::GetSimpleAnswer(person.getAttribute(3)) << std::endl;
+}
+
+void kiQuestion(PersonNS::Person& person, std::string& frage)
+{
+    std::cout << "<< "; 
+    std::cin.ignore();
+    getline(std::cin, frage, '\n'); 
+    if (frage != "")
+    {
+        kiLoop(person, frage);
+        frage = "";
+    } else 
+    {
+        // Do nothing
+        throw 1;
+    }
 }

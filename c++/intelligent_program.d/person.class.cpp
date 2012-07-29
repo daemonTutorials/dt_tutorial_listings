@@ -6,9 +6,8 @@ namespace PersonNS {
 Person::Person()
 {
     this->firstName = "";
-    this->lastName = "";
     this->age = "";
-    this->birthday = "";
+    this->question = "";
 }
 
 string Person::getAttribute(int index)
@@ -20,15 +19,11 @@ string Person::getAttribute(int index)
         break;
         
     case 2:
-        return this->lastName;
-        break;
-        
-    case 3:
         return this->age;
         break;
         
-    case 4:
-        return this->birthday;
+    case 3:
+        return this->question;
         break;
         
     default:
@@ -48,23 +43,20 @@ bool Person::setAttribute(int index, string content)
         // std::cout << this->firstName << endl;
         return true;
         break;
-    
+        
     case 2:
-        this->lastName += content;
+        this->age += content;
         return true;
         break;
         
     case 3:
-        this->age += content;
+        this->question = content;
         return true;
         break;
-    
-    case 4:
-        this->birthday += content;
-        return true;
-        break;
+        
     default:
         return false;
+        break;
     
     }
     return true;
@@ -72,7 +64,7 @@ bool Person::setAttribute(int index, string content)
 
 string Person::getAll()
 {
-    string all = this->firstName + ", " + this->lastName + " | " + this->age + " | " + this->birthday;
+    string all = this->firstName + " | " + this->age + " | " + this->question;
     return all;
 }
 

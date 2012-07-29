@@ -25,6 +25,8 @@ Index
  - grafic_x11 (executable)
 
 /c++/intelligent_program.d
+ - ki.ns.h
+ - ki.ns.cpp
  - person.class.h
  - person.class.cpp
  - intelligent_program.cpp

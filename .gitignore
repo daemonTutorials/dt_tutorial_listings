@@ -3,6 +3,8 @@
 
 *.pyc
 *.pyo
+*.geany
+*.o
 
 # OS generated files #
 ######################

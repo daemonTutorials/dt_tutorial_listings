@@ -19,6 +19,8 @@
  * MA 02110-1301, USA.
  * 
  * 2011/12/29
+ * 
+ * Command: g++ "%f" -g -o "%e" -Wall -lSDL -lSDLmain -lSDL_mixer $(sdl-config --cflags --libs) $(pkg-config gl --libs)
  */
 
 #include "std_lib_facilities.h"
