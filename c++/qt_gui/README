@@ -1,5 +1,0 @@
-To build use:
-
-qmake -project
-qmake
-make
