@@ -9,19 +9,27 @@
 #include "std_lib_facilities.h"
 #include <QtGui>
 
-int main(int argc, char *argv[])
+int main(int argv, char **args)
 {
-    QApplication app(argc, argv);
-    QWidget window;
-    QLabel *label = new QLabel(QApplication::translate("windowlayout", "Name:"));
-    QLineEdit *lineEdit = new QLineEdit();
-
-    QHBoxLayout *layout = new QHBoxLayout();
-    layout->addWidget(label);
-    layout->addWidget(lineEdit);
+    QApplication app(argv, args);
     
-    window.setLayout(layout);
-    window.setWindowTitle(QApplication::translate("toplevel", "MyWidget"));
+    //QLabel *label = new QLabel(QApplication::translate("windowlayout", "Name:"));
+    //QLineEdit *lineEdit = new QLineEdit();
+    
+    QLabel label("Name:");
+    QLineEdit lineEdit;
+    QPushButton quitButton("Quit");
+    
+    QObject::connect(&quitButton, SIGNAL(clicked()), qApp, SLOT(quit()));
+
+    QVBoxLayout layout;
+    layout.addWidget(&label);
+    layout.addWidget(&lineEdit);
+    layout.addWidget(&quitButton);
+    
+    QWidget window;
+    window.setLayout(&layout);
+    window.setWindowTitle("Test");
     window.show();
     
     return app.exec();

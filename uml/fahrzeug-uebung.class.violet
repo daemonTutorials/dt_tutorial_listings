@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.6.0_24" class="java.beans.XMLDecoder">
+ <object class="com.horstmann.violet.ClassDiagramGraph">
+  <void method="addNode">
+   <object id="ClassNode0" class="com.horstmann.violet.ClassNode">
+    <void property="bounds">
+     <object class="java.awt.geom.Rectangle2D$Double">
+      <void method="setRect">
+       <double>580.0</double>
+       <double>80.0</double>
+       <double>240.0</double>
+       <double>220.0</double>
+      </void>
+     </object>
+    </void>
+    <void property="attributes">
+     <void property="text">
+      <string>char motorType[]
+unsigned long int kmAmount
+unsigned int maxSpeed
+unsigned int currentSpeed
+double restTimeToArrive
+
+</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>setSpeed(unsigned int val)
+getSpeed() const
+setName(char val)
+getName() const
+setKMAmount(unsigned long int val)
+getKMAmount() const
+getRestTimeToArrive() const
+drive(unsigned long int val)
+</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Fahrzeug</string>
+     </void>
+    </void>
+   </object>
+   <object class="java.awt.geom.Point2D$Double">
+    <void method="setLocation">
+     <double>580.0</double>
+     <double>80.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object id="ClassNode1" class="com.horstmann.violet.ClassNode">
+    <void property="bounds">
+     <object class="java.awt.geom.Rectangle2D$Double">
+      <void method="setRect">
+       <double>610.0</double>
+       <double>380.0</double>
+       <double>180.0</double>
+       <double>140.0</double>
+      </void>
+     </object>
+    </void>
+    <void property="attributes">
+     <void property="text">
+      <string>char name[]
+char producer[]
+unsigned int age
+unsigned int nextCheck</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>setAge(unsigned int val)
+getAge() const
+getNextCheck() const</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>PKW</string>
+     </void>
+    </void>
+   </object>
+   <object class="java.awt.geom.Point2D$Double">
+    <void method="setLocation">
+     <double>610.0</double>
+     <double>380.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object id="NoteNode0" class="com.horstmann.violet.NoteNode">
+    <void property="bounds">
+     <object class="java.awt.geom.Rectangle2D$Double">
+      <void method="setRect">
+       <double>950.0</double>
+       <double>180.0</double>
+       <double>400.0</double>
+       <double>60.0</double>
+      </void>
+     </object>
+    </void>
+    <void property="bounds">
+     <void method="setRect">
+      <double>950.0</double>
+      <double>180.0</double>
+      <double>400.0</double>
+      <double>60.0</double>
+     </void>
+    </void>
+    <void property="text">
+     <void property="text">
+      <string>Hier wird auch errechnet, 
+...wie lange das Auto brauch, um das Ziel zu erreichen(min).
+...wie lang die Reststrecke ist.</string>
+     </void>
+    </void>
+   </object>
+   <object class="java.awt.geom.Point2D$Double">
+    <void method="setLocation">
+     <double>950.0</double>
+     <double>180.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object id="PointNode0" class="com.horstmann.violet.PointNode">
+    <void property="bounds">
+     <object class="java.awt.geom.Rectangle2D$Double">
+      <void method="setRect">
+       <double>752.0</double>
+       <double>92.0</double>
+       <double>0.0</double>
+       <double>0.0</double>
+      </void>
+     </object>
+    </void>
+    <void property="bounds">
+     <void method="setRect">
+      <double>752.0</double>
+      <double>92.0</double>
+      <double>0.0</double>
+      <double>0.0</double>
+     </void>
+    </void>
+   </object>
+   <object class="java.awt.geom.Point2D$Double">
+    <void method="setLocation">
+     <double>752.0</double>
+     <double>92.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
+    </void>
+   </object>
+   <object idref="ClassNode0"/>
+   <object idref="ClassNode1"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.NoteEdge"/>
+   <object idref="NoteNode0"/>
+   <object idref="PointNode0"/>
+  </void>
+ </object>
+</java>
