@@ -18,7 +18,9 @@ double restTimeToArrive
     </void>
     <void property="methods">
      <void property="text">
-      <string>Fahrzeug::Fahrzeug()
+      <string>Fahrzeug()
+Fahrzeug(const Fahrzeug &amp;right)
+~Fahrzeug()
 setSpeed(unsigned int val)
 getSpeed() const
 setName(char val)
@@ -55,7 +57,9 @@ unsigned int nextCheck</string>
     </void>
     <void property="methods">
      <void property="text">
-      <string>PKW:OPKW()
+      <string>PKW()
+PKW(const PKW &amp;right)
+~PKW()
 setAge(unsigned int val)
 getAge() const
 getNextCheck() const</string>
@@ -102,8 +106,10 @@ double currentWeight</string>
     </void>
     <void property="methods">
      <void property="text">
-      <string>setLoadSpace(double val)
-LKW::LKW()
+      <string>LKW()
+LKW(const LKW &amp;right)
+~LKW()
+setLoadSpace(double val)
 getLoadSpace() const
 setMaxWeight(double val)
 getMaxWeight() const
