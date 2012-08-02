@@ -14,6 +14,20 @@
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	Fahrzeug car;
+
+	car.setName("Benz");
+	car.setProducer("Mercedes");
+	car.setMotorType("Benzin");
+	car.setMaxSpeed(300);
+	car.setKMAmount(100);
+	car.setSpeed(80);
+
+	cout.precision(300);
+	cout << "The car arrives in " << car.getRestTimeToArrive() << " hours!" << endl;
+	cout << "The car arrives in " << car.getRestTimeToArrive()*60 << " minutes!" << endl;
+	cout << "The car arrives in " << (car.getRestTimeToArrive()*60)*60 << " seconds!" << endl;
+	cout << "The car arrives in " << ((car.getRestTimeToArrive()*60)*60)*100 << " milliseconds!" << endl;
+
 	return 0;
 }
